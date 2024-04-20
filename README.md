@@ -1,3 +1,3 @@
-<img src="Blockly-Logo.png">
+<img src="Robonect-Blockly.png">
 
-Backups einiger meiner Scripte in Blockly/XML für den ioBroker
+Ein Einfaches Script um den Robby per HTTP-Request zu steuern.
