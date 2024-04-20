@@ -1,0 +1,231 @@
+<block xmlns="https://developers.google.com/blockly/xml" type="create_ex" id="HDa|aR~Rm#Mj$3#:2}q;" x="788" y="-187">
+  <field name="NAME">0_userdata.0.Automower.Mähauftrag</field>
+  <field name="TYPE">number</field>
+  <field name="READABLE">TRUE</field>
+  <field name="WRITEABLE">TRUE</field>
+  <value name="VALUE">
+    <block type="math_number" id="-7=5QN]uLF6{E_SpaS],">
+      <field name="NUM">4</field>
+    </block>
+  </value>
+  <next>
+    <block type="on" id="Hq0[4Ax{+jc%qZ@/oxnF">
+      <field name="OID">0_userdata.0.Automower.Mähauftrag</field>
+      <field name="CONDITION">ne</field>
+      <field name="ACK_CONDITION"></field>
+      <statement name="STATEMENT">
+        <block type="variables_set" id="8Tl1w3h(jg4U+!QSWt2I">
+          <field name="VAR" id="{$Sy/yu72}Z~lk62B~sm">Modus</field>
+          <value name="VALUE">
+            <block type="on_source" id="}{qjM{xt=UKh5c_ih%j*">
+              <field name="ATTR">state.val</field>
+            </block>
+          </value>
+          <next>
+            <block type="variables_set" id="]!(`8%)f^pvV:|C%*Re!">
+              <field name="VAR" id="n:!(~BR?36]]Z[R$=i=*">Benutzername</field>
+              <value name="VALUE">
+                <block type="text" id=")?mzNnC.AKSWB`LNn3AC">
+                  <field name="TEXT">USERNAME</field>
+                </block>
+              </value>
+              <next>
+                <block type="variables_set" id="Z$ew)dzF$laM(y$q9Qc8">
+                  <field name="VAR" id=":}`JCh((pdEql(gdY9YS">Passwort</field>
+                  <value name="VALUE">
+                    <block type="text" id="y3d!dnxx]S{BZEipphF@">
+                      <field name="TEXT">PASSWORD</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="variables_set" id="4^*,-ve^/#oswT_/p_ZF">
+                      <field name="VAR" id="X}=EZ]DM4xpVt^~c6J[T">Robby-IP</field>
+                      <value name="VALUE">
+                        <block type="text" id="73oH:%R[pY^lp~OI=%/~">
+                          <field name="TEXT">192.168.xxx.xxx</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="variables_set" id="D.d[*l4X^:,HMb!lW8+5">
+                          <field name="VAR" id="l?(d~+yoOL=%zEK8!WsC">Dauer</field>
+                          <value name="VALUE">
+                            <block type="text" id="ODl;b1S9~qpx/(0HS2M#">
+                              <field name="TEXT">90</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="controls_if" id="`]0kvKc+T*Nb6Em)zpC+">
+                              <mutation else="1"></mutation>
+                              <value name="IF0">
+                                <block type="logic_compare" id="5nmVIIB}hpvJmLcUm7nt">
+                                  <field name="OP">EQ</field>
+                                  <value name="A">
+                                    <block type="variables_get" id="hB7H_oHI)a7O-B,.({au">
+                                      <field name="VAR" id="{$Sy/yu72}Z~lk62B~sm">Modus</field>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <block type="math_number" id=")PD/bBKP8}p4BN.nl18;">
+                                      <field name="NUM">4</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                              <statement name="DO0">
+                                <block type="variables_set" id="Oj`OL`gfE({q|_b}R3Zh">
+                                  <field name="VAR" id="A:a6nZU!SeLU5v%:=tOA">URL</field>
+                                  <value name="VALUE">
+                                    <block type="text_join" id=",id}$U$N@y~:`nVV=ziu" inline="true">
+                                      <mutation items="7"></mutation>
+                                      <value name="ADD0">
+                                        <block type="text" id="`X_YWOTBqIWsb9B(b|xP">
+                                          <field name="TEXT">http://</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD1">
+                                        <block type="variables_get" id="YaG4eofM@.2412rw[lI7">
+                                          <field name="VAR" id="X}=EZ]DM4xpVt^~c6J[T">Robby-IP</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD2">
+                                        <block type="text" id=";s1JlZg=*-S/5k1S0Ck;">
+                                          <field name="TEXT">/xml?user=</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD3">
+                                        <block type="variables_get" id="l0#w0O7wEQq(HiMJB%6v">
+                                          <field name="VAR" id="n:!(~BR?36]]Z[R$=i=*">Benutzername</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD4">
+                                        <block type="text" id="yD+?dl;X7t*xaH2dU4WF">
+                                          <field name="TEXT">&amp;pass=</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD5">
+                                        <block type="variables_get" id="]a#nrJt(y_XID06?VT`D">
+                                          <field name="VAR" id=":}`JCh((pdEql(gdY9YS">Passwort</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD6">
+                                        <block type="text" id="+]wkks~}=!p?h}N8mCFO">
+                                          <field name="TEXT">&amp;cmd=mode&amp;mode=home</field>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </value>
+                                </block>
+                              </statement>
+                              <statement name="ELSE">
+                                <block type="variables_set" id=":Bzy#x9%ASJhr4-q27I8">
+                                  <field name="VAR" id="A:a6nZU!SeLU5v%:=tOA">URL</field>
+                                  <value name="VALUE">
+                                    <block type="text_join" id=";$p}|.S]}57e89bRn)PV" inline="true">
+                                      <mutation items="12"></mutation>
+                                      <value name="ADD0">
+                                        <block type="text" id="/YU$ax-%TqZ|aoiyigRC">
+                                          <field name="TEXT">http://</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD1">
+                                        <block type="variables_get" id="4jVYM0dw))j@dPb=w+q9">
+                                          <field name="VAR" id="X}=EZ]DM4xpVt^~c6J[T">Robby-IP</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD2">
+                                        <block type="text" id="C}A-k2=HLK4G4r~VNPpu">
+                                          <field name="TEXT">/xml?user=</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD3">
+                                        <block type="variables_get" id="`dv0v:26L|,PtC`=e:wF">
+                                          <field name="VAR" id="n:!(~BR?36]]Z[R$=i=*">Benutzername</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD4">
+                                        <block type="text" id="BEG!R0(tvB_065hZ{|2)">
+                                          <field name="TEXT">&amp;pass=</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD5">
+                                        <block type="variables_get" id="-@IT64Q8Zp|,8zBe$Pmb">
+                                          <field name="VAR" id=":}`JCh((pdEql(gdY9YS">Passwort</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD6">
+                                        <block type="text" id="_L`$QZ}{q*iP+f9(wf=P">
+                                          <field name="TEXT">&amp;cmd=</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD7">
+                                        <block type="text" id="PX7xkaV%#pJc]Q)48T4b">
+                                          <field name="TEXT">mode&amp;mode=job&amp;remotestart=</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD8">
+                                        <block type="variables_get" id=";olq|sk;7F|1;PQib!};">
+                                          <field name="VAR" id="{$Sy/yu72}Z~lk62B~sm">Modus</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD9">
+                                        <block type="text" id="OI501od^0qM/vc7d[_dg">
+                                          <field name="TEXT">&amp;duration=</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD10">
+                                        <block type="variables_get" id="3Ff23WuF)8z]QTZMy{)H">
+                                          <field name="VAR" id="l?(d~+yoOL=%zEK8!WsC">Dauer</field>
+                                        </block>
+                                      </value>
+                                      <value name="ADD11">
+                                        <block type="text" id="w/xF,n.`s+0n9Co?h4nk">
+                                          <field name="TEXT">&amp;after=home</field>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </value>
+                                </block>
+                              </statement>
+                              <next>
+                                <block type="request" id="6n.4)@jYosQb0Fm6DOz6">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" with_statement="false"></mutation>
+                                  <field name="WITH_STATEMENT">FALSE</field>
+                                  <field name="LOG">warn</field>
+                                  <value name="URL">
+                                    <shadow type="text" id="JqE@}8@D;3U@h/jHn2|I">
+                                      <field name="TEXT">http://</field>
+                                    </shadow>
+                                    <block type="variables_get" id="_XHs`lm,=9ncey5jF*P!">
+                                      <field name="VAR" id="A:a6nZU!SeLU5v%:=tOA">URL</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="debug" id="u.Pb)7dyk{IlHfz,5H[f">
+                                      <field name="Severity">warn</field>
+                                      <value name="TEXT">
+                                        <shadow type="text" id="Wq?%}zU:m^F:Rk:e^bVL">
+                                          <field name="TEXT">test</field>
+                                        </shadow>
+                                        <block type="variables_get" id="XaB/S7,ZEM9-!oWhaGr`">
+                                          <field name="VAR" id="A:a6nZU!SeLU5v%:=tOA">URL</field>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </next>
+</block>
