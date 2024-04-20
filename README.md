@@ -11,8 +11,8 @@ Um den Robby loszuschicken wird einfach der Wert vom Datenpunkt geändert.
 In meinem Fall sind das:
 - 0 für Normal
 - 1 für Ab Ladestation
-- 2 für Außen
-- 3 für Innen
+- 2 für Außen (muss im Robonect-Modul konfiguriert sein)
+- 3 für Innen (muss im Robonect-Modul konfiguriert sein)
 - 4 für Home
 
 <img src="Robonect-Blockly.png">
