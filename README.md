@@ -6,7 +6,7 @@ Natürlich müssen die Einstellungen entsprechend angepasst werden:
 - Robby-IP ist natürlich die IP-Addresse vom Robonect-Modul. (muss statisch vergeben sein!)
 - Dauer ist die Mähdauer in Minuten.
 - Ansonsten sind für die Funktion keine weiteren Einstellungen nötig.
-- 
+
 Um den Robby loszuschicken wird einfach der Wert vom Datenpunkt geändert.
 In meinem Fall sind das:
 - 0 für Normal
